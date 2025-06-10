@@ -19,3 +19,5 @@ if (process.argv[2] == '--help') {
 } else {
     console.log('Ejecutar la aplicación');
 }
+
+console.log(`Buenos días, ${process.argv[2]} !`);
