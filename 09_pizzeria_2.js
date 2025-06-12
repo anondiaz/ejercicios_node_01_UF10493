@@ -15,17 +15,17 @@ if (process.argv.length < 7) {
     // pizzasJson.forEach((pizza, index) => {
     //     menu += '   ' +`${index + 1}. ${pizza.nombre} - ${pizza.precio}€\n`;
     // });
-    menu += "Masas\n\n";
+    menu += "Masas (Elegir 1)\n\n";
     for (let i = 0; i < ingredientes.length; i++) {
         if (i <= 1) {
-            menu += `\t${i + 1}. Masa ${ingredientes[i].ingrediente} - ${ingredientes[i].precio}€\n`;
+            menu += `\t${i + 1}. Masa ${ingredientes[i].ingrediente} - ${ingredientes[i].precio.toFixed(2)}€\n`;
         }
     }
 
-    menu += "\nIngredientes(Elegir 4)\n\n";
+    menu += "\nIngredientes (Elegir 4)\n\n";
     for (let i = 0; i < ingredientes.length; i++) {
         if (i >= 2) {
-        menu += `\t${i + 1}. ${ingredientes[i].ingrediente} - ${ingredientes[i].precio}€\n`;
+        menu += `\t${i + 1}. ${ingredientes[i].ingrediente} - ${ingredientes[i].precio.toFixed(2)}€\n`;
         }
     }
 
@@ -49,7 +49,7 @@ if (process.argv.length < 7) {
         console.log("Debes elegir 4 ingredientes");
         process.exit(1);
     }
-    let precioTotal = ingredientes[masaElegida - 1].precio; // Masa elegida
+    let precioTotal = ingredientes[masaElegida - 1].precio; // Precio de la masa elegida
     // console.log(masaElegida);
     // console.log(ingredientesElegidos);
     let ingredientesSeleccionados = [];
